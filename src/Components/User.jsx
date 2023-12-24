@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import UserCard from "./UserCard";
+import { FiSearch } from "react-icons/fi";
+import { RiEmotionSadLine } from "react-icons/ri";
+
+
 
 const User = () => {
     const [users, setUsers] = useState([]);
@@ -44,34 +48,31 @@ const User = () => {
     return (
         <div className="max-w-7xl mx-auto p-4">
             <div className="rounded-lg bg-gray-200 p-5">
-                <div className="flex">
+                <div className="flex justify-center">
                     <input
                         type="text"
                         value={searchTerm}
                         onChange={handleInputChange}
-                        className="w-full max-w-[160px] bg-white pl-2 text-base font-semibold outline-0"
-                        placeholder=""
+                        className="w-full max-w-[280px] bg-white pl-2  rounded-l-lg text-base font-semibold outline-0"
+                        placeholder="Type Acc No"
                     />
-                    <input
-                        type="button"
-                        value="Search"
-                        onClick={handleSearch}
-                        className="bg-blue-500 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-blue-800 transition-colors"
-                    />
+                    <button onClick={handleSearch}
+                        className="bg-[#711DB0] p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-blue-800 transition-colors"><FiSearch /></button>
+                   
                     <input
                         type="button"
                         value="Reset"
                         onClick={resetSearch}
-                        className="bg-red-500 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-red-800 transition-colors ml-2"
+                        className="bg-[#EF4040] p-2 rounded-lg rounded-br-lg text-white font-semibold hover:bg-red-800 transition-colors ml-2"
                     />
                 </div>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-5">
                 {searchedUser ? (
                     <UserCard key={searchedUser.id} user={searchedUser}></UserCard>
                 ) : (
-                    <p className="text-center mt-20">No results found.</p>
+                    <p className="text-center mt-20 flex justify-center items-center md:text-xl text-md gap-1"><RiEmotionSadLine />Please Search Account..!</p>
                 )}
             </div>
         </div>

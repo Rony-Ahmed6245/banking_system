@@ -18,32 +18,30 @@ const Account = () => {
 
     return (
         <div className="max-w-7xl mx-auto p-4 mt-10">
-
-
-
             <div className="md:flex justify-start items-start gap-4">
-                <div className="md:w-4/12 flex-col gap-4 md:flex justify-center md:mt-10 ">
-                    <p>Account Number: {acc_no}</p>
-                    <p>Total Amount: {totalAmount}.00TK</p>
-                    <p>Penalty Amount: {penaltyAmount}.00TK</p>
+                <div className="md:w-4/12 shadow   p-4 flex-col rounded gap-4 mb-5 md:mb-0 md:flex justify-center  ">
+                    <p className="text-md bg-[#C21292] text-white  font-bold  p-4 shadow  rounded">Account Number: {acc_no}</p>
+                    <p className="text-md bg-[#EF4040] text-white my-2 font-bold p-4 shadow rounded">Total Amount: {totalAmount}.00TK</p>
+                    <p className="text-md bg-[#FFA732] text-white  font-bold p-4  shadow rounded">Penalty Amount: {penaltyAmount}.00TK</p>
                 </div>
-                <div className="md:w-8/12 mt-20 md:mt-0">
-                    <h1 className="text-center">History</h1>
+                <div className="md:w-8/12  text-white rounded-md">
+                    <h1 className="text-center py-5 bg-[#711DB0] rounded-t-md uppercase text-white">Deposit History</h1>
                     <div className="overflow-x-auto ">
                         <table className="table">
                             {/* head */}
                             <thead>
-                                <tr>
-                                    <th>Deposit Amount</th>
-                                    <th>Penalty Amount</th>
-                                    <th>Date</th>
+                                <tr className="bg-[#711DB0]">
+                                    <th className="text-white text-center shadow border">NO</th>
+                                    <th className="text-white text-center shadow border">Deposit Amount</th>
+                                    <th className="text-white text-center shadow border">Penalty Amount</th>
+                                    <th className="text-white text-center shadow border">Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {/* row 1 */}
                                 {
-                                    filterAcc?.map(item => (
-                                        <Table key={item._id} item={item} ></Table>
+                                    filterAcc?.map((item, index )=> (
+                                        <Table key={item._id} item={item} index={index+1} ></Table>
                                     ))
                                 }
 

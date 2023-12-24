@@ -1,12 +1,13 @@
 
 
-const Table = ({item}) => {
+const Table = ({item, index}) => {
     console.log(item);
     return (
-        <tr>
-            <td>{item.amount}.00TK</td>
-            <td>{item.pen_amount}.00TK</td>
-            <td></td>
+        <tr className="bg-white shadow text-black border">
+            <td className="shadow text-black border text-center">{index}</td>
+            <td className="shadow text-black border text-center">{item.amount}.00TK</td>
+            <td className="shadow text-black border text-center">{item.pen_amount}.00TK</td>
+            <td className="shadow text-black border text-center"></td>
         </tr>
     );
 };
