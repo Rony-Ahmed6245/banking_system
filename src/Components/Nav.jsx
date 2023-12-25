@@ -14,35 +14,44 @@ const Nav = () => {
 
 
     return (
-        <div className="py-4 max-w-7xl mx-auto sticky top-0 z-10 bg-slate-200 ">
-            <Navbar className="bg-slate-200" fluid={true}>
-                <Navbar.Container className="flex items-center justify-between">
+        <div className="bg-[#711DB0]">
+            <div className="lg:py-2 py-0 max-w-7xl mx-auto sticky top-0 z-10  ">
+                <Navbar className="bg-[#711DB0] text-white" fluid={true}>
+                    <Navbar.Container className="flex items-center justify-between">
 
-                    <Navbar.Brand>
-                        logo
-                    </Navbar.Brand>
+                        <Navbar.Brand>
+                           <h1 className="uppercase md:text-4xl text-3xl font-semibold ">
+                            y.
+                            <span className="text-[#FFA732]">p</span>.
+                            <span>c</span>.
+                            <span className="text-[#EF4040]">s</span>
+                          </h1>
+                        </Navbar.Brand>
 
-                    <Navbar.Collapse className="bg-gray-300" collapseType="sidebar">
-                        <Navbar.Container tag="ul" className="flex  flex-col gap-5">
-                            {
-                                nav
-                            }
+                        <Navbar.Collapse className="bg-[#C21292] text-white" collapseType="sidebar">
+                            <Navbar.Container tag="ul" className="flex uppercase flex-col gap-5">
+                                {
+                                    nav
+                                }
+                            </Navbar.Container>
+                        </Navbar.Collapse>
+
+                        <Navbar.Container className="flex items-center gap-3">
+                            <Navbar.Container
+                                tag="ul"
+                                className="lg:flex hidden items-center uppercase justify-between gap-5"
+                            >
+                                {
+                                    nav
+                                }
+                            </Navbar.Container>
+                            <div className=" bg-slate-50 rounded">
+                                <Navbar.Toggle />
+                            </div>
                         </Navbar.Container>
-                    </Navbar.Collapse>
-
-                    <Navbar.Container className="flex items-center gap-3">
-                        <Navbar.Container
-                            tag="ul"
-                            className="lg:flex hidden items-center justify-between gap-5"
-                        >
-                            {
-                                nav
-                            }
-                        </Navbar.Container>
-                        <Navbar.Toggle />
                     </Navbar.Container>
-                </Navbar.Container>
-            </Navbar>
+                </Navbar>
+            </div>
         </div>
     );
 };

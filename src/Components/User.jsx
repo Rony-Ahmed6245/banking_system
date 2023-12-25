@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import UserCard from "./UserCard";
 import { FiSearch } from "react-icons/fi";
 import { RiEmotionSadLine } from "react-icons/ri";
+import Loading from "./Loading";
 
 
 
@@ -46,7 +47,8 @@ const User = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto p-4">
+        <div className="max-w-3xl mx-auto p-4">
+            <marquee  direction="" className='uppercase text-sm text-[#EF4040] font-semibold'>Do not share account number with other</marquee>
             <div className="rounded-lg bg-gray-200 p-5">
                 <div className="flex justify-center">
                     <input
@@ -57,13 +59,13 @@ const User = () => {
                         placeholder="Type Acc No"
                     />
                     <button onClick={handleSearch}
-                        className="bg-[#711DB0] p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-blue-800 transition-colors"><FiSearch /></button>
+                        className=" bg-[#711DB0]  outline-none border-none px-4 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-[#C21292] transition-colors"><FiSearch /></button>
                    
                     <input
                         type="button"
                         value="Reset"
                         onClick={resetSearch}
-                        className="bg-[#EF4040] p-2 rounded-lg rounded-br-lg text-white font-semibold hover:bg-red-800 transition-colors ml-2"
+                        className="hover:bg-[#EF4040] outline-none border-none px-4 p-2 rounded-lg rounded-br-lg text-white font-semibold bg-[#FFA732] transition-colors ml-2"
                     />
                 </div>
             </div>
@@ -72,7 +74,7 @@ const User = () => {
                 {searchedUser ? (
                     <UserCard key={searchedUser.id} user={searchedUser}></UserCard>
                 ) : (
-                    <p className="text-center mt-20 flex justify-center items-center md:text-xl text-md gap-1"><RiEmotionSadLine />Please Search Account..!</p>
+                    <p className="text-center mt-10 flex justify-center items-center md:text-xl text-md gap-1"><Loading></Loading></p>
                 )}
             </div>
         </div>

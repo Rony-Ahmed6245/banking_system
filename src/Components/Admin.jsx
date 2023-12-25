@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Dashboard from "./Dashboard";
+import Dashboard2 from "./Dashboard2";
 
 const Admin = () => {
     const [formData, setFormData] = useState({
@@ -45,7 +45,7 @@ const Admin = () => {
             <div className="max-w-7xl mx-auto">
                 {!isLoggedIn ? (
                     <div className="card shadow border">
-                        <h4 className="title text-[#711DB0] uppercase">Log In!</h4>
+                        <h4 className="title text-white uppercase">Log In!</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="field">
                                 <svg className="input-icon" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
@@ -81,14 +81,14 @@ const Admin = () => {
                                     onChange={handleInputChange}
                                 />
                             </div>
-                            <button className="btn bg-[#711DB0]" type="submit">
+                            <button className="btn bg-white text-black py-0 outline-none border-none px-5" type="submit">
                                 Login
                             </button>
                             {errorMessage && <p className="text-red-500">{errorMessage}</p>}
                         </form>
                     </div>
                 ) : (
-                    <Dashboard />
+                    <Dashboard2 />
                 )}
             </div>
         </div>

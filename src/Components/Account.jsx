@@ -17,17 +17,17 @@ const Account = () => {
     // console.log(addition);
 
     return (
-        <div className="max-w-7xl mx-auto p-4 mt-10">
+        <div className="max-w-7xl mx-auto p-4 my-5">
             <div className="md:flex justify-start items-start gap-4">
-                <div className="md:w-4/12 shadow   p-4 flex-col rounded gap-4 mb-5 md:mb-0 md:flex justify-center  ">
-                    <p className="text-md bg-[#C21292] text-white  font-bold  p-4 shadow  rounded">Account Number: {acc_no}</p>
-                    <p className="text-md bg-[#EF4040] text-white my-2 font-bold p-4 shadow rounded">Total Amount: {totalAmount}.00TK</p>
-                    <p className="text-md bg-[#FFA732] text-white  font-bold p-4  shadow rounded">Penalty Amount: {penaltyAmount}.00TK</p>
+                <div className="md:w-4/12    flex-col rounded gap-4 mb-5 md:mb-0 md:flex justify-center  ">
+                    <p className="text-md bg-[#C21292] uppercase text-white  font-bold  p-5 shadow  rounded">Account Number: {acc_no}</p>
+                    <p className="text-md bg-[#FFA732] uppercase text-white my-2 font-bold p-5 shadow rounded">Total Amount: {totalAmount}.00TK</p>
+                    <p className="text-md  bg-[#EF4040] uppercase text-white  font-bold p-5  shadow rounded">Penalty Amount: {penaltyAmount}.00TK</p>
                 </div>
                 <div className="md:w-8/12  text-white rounded-md">
                     <h1 className="text-center py-5 bg-[#711DB0] rounded-t-md uppercase text-white">Deposit History</h1>
                     <div className="overflow-x-auto ">
-                        <table className="table">
+                        <table className="table ">
                             {/* head */}
                             <thead>
                                 <tr className="bg-[#711DB0]">
