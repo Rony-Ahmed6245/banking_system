@@ -10,11 +10,9 @@ const Account = () => {
     const filterAcc = data.filter((item) => item.acc_no == acc_no);
     console.log(filterAcc);
 
-    const totalAmount = filterAcc.reduce((sum, item) => sum + item.amount, 0);
-    // console.log(addition);
-
-    const penaltyAmount = filterAcc.reduce((sum, item) => sum + item.pen_amount, 0);
-    // console.log(addition);
+     // Calculate the total amount and penalty amount separately
+     const totalAmount = filterAcc.reduce((sum, item) => sum + parseFloat(item.amount), 0);
+     const penaltyAmount = filterAcc.reduce((sum, item) => sum + parseFloat(item.pen_amount), 0);
 
     return (
         <div className="max-w-7xl mx-auto p-4 my-5">

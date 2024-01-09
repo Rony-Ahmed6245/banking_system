@@ -8,7 +8,7 @@ const Nav = () => {
         <>
             <Link to="/">Home</Link>
             <Link to="/user">Account</Link>
-            <Link to="admin">Admin</Link>
+            <Link to="admin">Dashboard</Link>
         </>
 
 
@@ -25,11 +25,12 @@ const Nav = () => {
                             <span className="text-[#FFA732]">p</span>.
                             <span>c</span>.
                             <span className="text-[#EF4040]">s</span>
+                            <span className="text-sm">Bank</span>
                           </h1>
                         </Navbar.Brand>
 
-                        <Navbar.Collapse className="bg-[#C21292] text-white" collapseType="sidebar">
-                            <Navbar.Container tag="ul" className="flex uppercase flex-col gap-5">
+                        <Navbar.Collapse className="bg-white text-[#711DB0] shadow-2xl border font-bold" collapseType="sidebar">
+                            <Navbar.Container tag="ul" className="flex uppercase flex-col gap-5 pt-4 ">
                                 {
                                     nav
                                 }

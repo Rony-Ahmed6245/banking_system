@@ -45,7 +45,7 @@ const Admin = () => {
             <div className="max-w-7xl mx-auto">
                 {!isLoggedIn ? (
                     <div className="card shadow border">
-                        <h4 className="title text-white uppercase">Log In!</h4>
+                        <h4 className="title text-white uppercase">only admin!</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="field">
                                 <svg className="input-icon" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">

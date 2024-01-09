@@ -7,7 +7,7 @@ const Table = ({item, index}) => {
             <td className="shadow text-black border text-center">{index}</td>
             <td className="shadow text-black border text-center">{item.amount}.00TK</td>
             <td className="shadow text-black border text-center">{item.pen_amount}.00TK</td>
-            <td className="shadow text-black border text-center"></td>
+            <td className="shadow text-black border text-center">{item.date}</td>
         </tr>
     );
 };

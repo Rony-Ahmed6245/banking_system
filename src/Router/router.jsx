@@ -6,6 +6,7 @@ import Account from "../Components/Account";
 import Dashboard2 from "../Components/Dashboard2";
 import AccountFrom from "../Components/AccountFrom";
 import DpFrom from "../Components/DpFrom";
+import ManageAcc from "../Components/ManageAcc";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             {
                 path:"/user/:acc_no",
                 element:<Account></Account>,
-                loader: ()=> fetch("/public/amount.json")
+                loader: ()=> fetch("http://localhost:5000/v1/userAmounts")
             }
         ]
     },
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path:'dp',
                 element:<DpFrom></DpFrom>,
+            },
+            {
+                path:'manageAcc',
+                element:<ManageAcc></ManageAcc>,
             }
         ]
     }

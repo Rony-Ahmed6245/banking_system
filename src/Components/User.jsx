@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import UserCard from "./UserCard";
 import { FiSearch } from "react-icons/fi";
-import { RiEmotionSadLine } from "react-icons/ri";
 import Loading from "./Loading";
 
 
@@ -13,7 +12,7 @@ const User = () => {
     const [searchedUser, setSearchedUser] = useState(null);
 
     useEffect(() => {
-        fetch("/public/user.json")
+        fetch("http://localhost:5000/v1/userBankAccounts")
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data);
@@ -43,7 +42,7 @@ const User = () => {
     };
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <div className="flex justify-center items-center h-[500px] "> <p className="loader"></p> </div>;
     }
 
     return (
@@ -72,7 +71,7 @@ const User = () => {
 
             <div className="mt-5">
                 {searchedUser ? (
-                    <UserCard key={searchedUser.id} user={searchedUser}></UserCard>
+                    <UserCard key={searchedUser._id} user={searchedUser}></UserCard>
                 ) : (
                     <p className="text-center mt-10 flex justify-center items-center md:text-xl text-md gap-1"><Loading></Loading></p>
                 )}
